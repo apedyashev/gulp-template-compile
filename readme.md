@@ -1,14 +1,13 @@
-# [gulp](https://github.com/wearefractal/gulp)-template-compile
+# [gulp](https://github.com/wearefractal/gulp)-template-compile-commonjs
 
-> Compile [Lo-Dash templates](http://lodash.com/docs#template) (should work with [Underscore templates](http://underscorejs.org/#template) too).
+> Compile [Lo-Dash templates](http://lodash.com/docs#template) (should work with [Underscore templates](http://underscorejs.org/#template) too). Allows to require templates
 
 ## Synopsis
 
-This plugin is heavily inspired by [Sindre Sorhus](https://github.com/sindresorhus)'s [gulp-nunjucks](https://github.com/sindresorhus/gulp-nunjucks) plugin, in fact I used it as skeleton for creating this one.
+This plugin isModified version of [gulp-template-compile](https://github.com/ingro/gulp-template-compile) plugin, that allows to require templates in commonjs style.
 
 ## Install
 
-Install with [npm](https://www.npmjs.org/package/gulp-template-compile)
 
 ```
 npm install --save-dev gulp-template-compile
@@ -20,7 +19,7 @@ npm install --save-dev gulp-template-compile
 
 ```js
 var gulp = require('gulp');
-var template = require('gulp-template-compile');
+var template = require('gulp-template-compile-commonjs');
 var concat = require('gulp-concat');
 
 gulp.task('default', function () {
@@ -70,16 +69,6 @@ Type: `Object`
 Default: null
 
 [Lo-Dash `_.template` options](http://lodash.com/docs#template).
-
-## Changelog
-
-#### 1.0:
-* **BREAKING**: Added support for custom dotted namespaces.
-
-## Notes
-
-If you use [grunt](http://gruntjs.com) instead of gulp, but want to perform a similar task, use [grunt-contrib-jst](https://github.com/gruntjs/grunt-contrib-jst).
-
 
 ## License
 

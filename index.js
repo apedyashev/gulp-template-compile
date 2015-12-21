@@ -1,10 +1,14 @@
 'use strict';
+
+// Modified version of https://www.npmjs.com/package/gulp-template-compile that allows to require templates
+// ?? https://github.com/umdjs/umd
+
 var gutil = require('gulp-util');
 var through = require('through2');
 var tpl = require('lodash.template');
 var PluginError = gutil.PluginError;
 
-var PLUGIN_NAME = 'gulp-template-compile';
+var PLUGIN_NAME = 'gulp-template-compile-commonjs';
 
 var getNamespaceDeclaration = function(ns) {
     var output = [];
@@ -30,11 +34,8 @@ module.exports = function (options) {
 
     function compiler (file) {
         var name = typeof options.name === 'function' && options.name(file) || file.relative;
-        var namespace = getNamespaceDeclaration(options.namespace || 'JST');
-        var templateHeader = '(function() {\n' + namespace.declaration;
-
-        var NSwrapper = '\n\n' + namespace.namespace + '["'+ name.replace(/\\/g, '/') +'"] = ';
-
+        var templateHeader = '(function() {\n'
+        var NSwrapper = 'module.exports["'+ name.replace(/\\/g, '/') +'"] = ';
         var template = tpl(file.contents.toString(), false, options.templateSettings).source;
 
         return templateHeader + NSwrapper + template + '})();';
