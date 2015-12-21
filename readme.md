@@ -7,10 +7,10 @@
 This plugin isModified version of [gulp-template-compile](https://github.com/ingro/gulp-template-compile) plugin, that allows to require templates in commonjs style.
 
 ## Install
-
+Plugin is not on npm yet, but you can install it using npm
 
 ```
-npm install --save-dev gulp-template-compile
+  npm i https://github.com/apedyashev/gulp-template-compile-commonjs.git#0.0.1 --save-dev
 ```
 
 ## Example
