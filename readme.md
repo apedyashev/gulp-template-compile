@@ -10,7 +10,7 @@ This plugin isModified version of [gulp-template-compile](https://github.com/ing
 Plugin is not on npm yet, but you can install it using npm
 
 ```
-  npm i https://github.com/apedyashev/gulp-template-compile-commonjs.git#0.0.1 --save-dev
+  npm i https://github.com/apedyashev/gulp-template-compile-commonjs.git#0.0.3--save-dev
 ```
 
 ## Example
